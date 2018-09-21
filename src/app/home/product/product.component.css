@@ -1,0 +1,43 @@
+.container-fluid {
+    margin-top: 20px;
+}
+
+.border1 {
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+}
+
+.product1 {
+    height: 200px;
+    padding: 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+img {
+    height: 130px;
+}
+
+.left1 {
+    display: flex;
+}
+
+.btn-brif {
+    width: 50px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-top {
+    margin-top: 25px;
+}

@@ -1,0 +1,33 @@
+.container-fluid {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.border1 {
+    border-left: 2px solid #ccc;
+    height: 100%;
+}
+
+.product1 {
+    height: 200px;
+    padding: 5px;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+.flex {
+    display: flex;
+}
+
+img {
+    height: 350px;
+}
+
+.left1 {
+    display: flex;
+}
