@@ -1,0 +1,11 @@
+img {
+    width: 300px;
+}
+
+.flex {
+    display: flex;
+}
+
+.margin-top {
+    margin-top: 20px;
+}

@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './registration/registration.component';
 import { UiMatrialsModule } from './ui-matrial';
 import { HeaderComponent } from './header/header.component';
+import { CartComponent } from './cart/cart.component';
+import { FooterModule } from './footer/footer.module';
+import { CartcountService } from './cartcount.service';
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    HeaderComponent
+    HeaderComponent,
+    CartComponent
     
   ],
   imports: [
@@ -28,10 +32,12 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     FormsModule,
     UiMatrialsModule,
+    FooterModule
     
   ],
   entryComponents:[RegistrationComponent],
-  providers: [],
+  exports:[FooterModule],
+  providers: [CartcountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

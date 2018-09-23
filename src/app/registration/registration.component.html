@@ -1,28 +1,30 @@
 <div class="center">
-    <h2 mat-dialog-title>Create New Account <span (click)="onNoClick()" class="close" mat-button><i class="fa fa-times" aria-hidden="true"></i></span> </h2>
+    <h2 mat-dialog-title>Create New Account <span (click)="Click1(this.dialogRef.close())" class="close" mat-button><i class="fa fa-times" aria-hidden="true"></i></span> </h2>
 
     <mat-dialog-content>
         <form class="example-form">
             <mat-form-field class="example-full-width">
-                <input type="text" matInput placeholder="User Name">
+                <input [(ngModel)]="abc" type="text" matInput placeholder="User Name" required>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input type="password" matInput placeholder="Password">
+                <input type="password" matInput placeholder="Password" required>
             </mat-form-field>
             <br>
             <mat-form-field class="example-full-width">
-                <input type="text" matInput placeholder="Frist Name">
+                <input type="text" matInput placeholder="Frist Name" required>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input type="text" matInput placeholder="Last Name">
+                <input type="text" matInput placeholder="Last Name" required>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input type="email" matInput placeholder="E-mail">
+                <input type="email" matInput placeholder="E-mail" required>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input type="number" matInput placeholder="Mobile No">
+                <input type="number" matInput placeholder="Mobile No" required>
             </mat-form-field>
-
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Address" required></textarea>
+            </mat-form-field>
         </form>
         <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
             <mat-radio-button class="example-radio-button" *ngFor="let genders of gender" [value]="genders">
@@ -37,8 +39,8 @@
 
     <mat-dialog-actions>
         <div class="button-row">
-            <button (click)="onNoClick()" mat-raised-button color="warn" type="cancel">Cancel</button>
-            <button (click)="onNoClick()" routerLink="/home" mat-raised-button color="primary" type="submit">Submit</button>
+            <button (click)="Click1(this.dialogRef.close())" mat-raised-button color="warn" type="cancel">Cancel</button>
+            <button (click)="onNoClick()" routerLink="/login" mat-raised-button color="primary" type="submit">Submit</button>
         </div>
 
     </mat-dialog-actions>

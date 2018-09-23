@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
 // import { HttpModule } from '@angular/http';
 // import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,6 +20,10 @@ const routes: Routes = [
   { 
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
+  },
+  {
+    path:'cart',
+    component:CartComponent
   },
   {
     path:'**',

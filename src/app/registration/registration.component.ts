@@ -7,16 +7,33 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
+ 
   constructor(public dialogRef: MatDialogRef<RegistrationComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any ) { }
-
-    onNoClick(): void {
+    abc : '';
+    onNoClick() {
       this.dialogRef.close();
-    }
-
+      alert('WelCome to Felix Shopping Mall \nPlease Login and password Credentials');
+  
+      if(this.abc.length>0)
+      {
+          alert("Please fill up the froms");
+      }
+      else
+      {
+        this.dialogRef.close();
+        alert('WelCome to Felix Shopping Mall \nPlease Login and password Credentials');
+    
+      }
+     
+        
+      }
+    
+    
   favoriteSeason: string;
   gender: string[] = ['Male', 'Female'];
+
+
 
   ngOnInit() {
   }
