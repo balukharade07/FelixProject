@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
       }
     
     
-  favoriteSeason: string;
+  favorite: string;
   gender: string[] = ['Male', 'Female'];
 
 

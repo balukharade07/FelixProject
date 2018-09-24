@@ -1,0 +1,50 @@
+.box {
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    height: 475px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.center {
+    text-align: center;
+}
+
+.top {
+    margin-top: 20px;
+}
+
+.top1 {
+    margin-top: 28px;
+    margin-bottom: 29px;
+}
+
+form {
+    width: 500px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+.flex {
+    display: inline;
+    display: flex;
+}
+
+.imgcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    margin-left: 20px;
+}

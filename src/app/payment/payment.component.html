@@ -1,0 +1,26 @@
+<div class="container  top1">
+    <div class="">
+
+
+        <form class="col-md-12 box">
+            <h2 class="top center">Payment Details</h2>
+            <img class="imgcenter" src="{{img}}" alt="">
+            <h4 class="top">CARD NUMBER</h4>
+            <input type="text" class="form-control" placeholder="Valid Card Number">
+            <div class="top flex">
+                <div class="">
+                    <h4>EXPIRATION DATE</h4>
+                    <input type="text" class="form-control " placeholder="MM/YYYY">
+                </div>
+                <div class="left">
+                    <h4>CV CODE</h4>
+                    <input type="text" class="form-control " placeholder="CVV">
+                </div>
+            </div>
+            <h4 class="top">COUPON CODE</h4>
+            <input type="text" class="form-control" placeholder="COUPON CODE">
+            <button routerLink="/confirm" type="button" mat-raised-button color="primary" class=" top">Confirm Payment</button>
+        </form>
+    </div>
+</div>
+<app-footer1></app-footer1>

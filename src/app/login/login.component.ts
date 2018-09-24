@@ -24,4 +24,11 @@ export class LoginComponent {
     });
   }
 
+  login(){
+   
+  
+      alert('WelCome To Felix Shopping')
+   
+  }
+
 }

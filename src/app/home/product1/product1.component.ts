@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartcountService } from '../../cartcount.service';
 
 export interface PeriodicElement {
   name: string;
@@ -21,8 +22,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class Product1Component implements OnInit {
 
-  constructor() { }
-  img = './assets/img/product1.jpeg';
+  constructor(private _cart: CartcountService) { 
+    
+    this.productImg1 = this._cart.productImg;
+    
+  }
+
+  productImg1 = [{
+    
+  }]
 
   displayedColumns: string[] = ['position', 'name', 'type'];
   dataSource = ELEMENT_DATA;

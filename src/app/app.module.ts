@@ -14,6 +14,9 @@ import { HeaderComponent } from './header/header.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterModule } from './footer/footer.module';
 import { CartcountService } from './cartcount.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PaymentComponent } from './payment/payment.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { CartcountService } from './cartcount.service';
     LoginComponent,
     RegistrationComponent,
     HeaderComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent,
+    ConfirmComponent
     
   ],
   imports: [
@@ -32,7 +37,8 @@ import { CartcountService } from './cartcount.service';
     BrowserAnimationsModule,
     FormsModule,
     UiMatrialsModule,
-    FooterModule
+    FooterModule,
+    HttpClientModule
     
   ],
   entryComponents:[RegistrationComponent],

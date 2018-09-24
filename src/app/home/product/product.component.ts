@@ -8,31 +8,35 @@ import { CartcountService } from '../../cartcount.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private _cart: CartcountService) { }
+  constructor(private _cart: CartcountService) { 
+    this.statu1 = this._cart.statu2;
+    this.productImg1 = this._cart.productImg;
+    
+  }
 
- 
+  productImg1 = [{
+    
+  }]
 
   ngOnInit() {
-   this.statu1 = this._cart.statu2;
+   
    
   }
 
-
-
-
-  img = './assets/img/product1.jpeg';
-  girl = './assets/img/girl_dress.jpeg';
-  boys = './assets/img/boys_dress.jpeg';
- 
- 
-
-  counter1 = 0;
+  result = 0;
   incres(){
-    this.counter1 = this.counter1+1;
+    this.result++;
   }
   deincres(){
-    this.counter1--;
+    this.result--;
   }
+
+
+ 
+ 
+ 
+
+  
   counter2 = 0;
   incres2(){
     this.counter2 = this.counter2+1;

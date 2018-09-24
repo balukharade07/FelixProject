@@ -1,19 +1,19 @@
 <section class="container flex margin-top">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-9  ">
             <div class="flex">
                 <div class="col-md-5">
-                    <h2>Girls Dress</h2>
-                    <img class="img1" *ngFor='let x of productImg1' [src]="x.girl">
-                    <div class="center margin-top">
+                    <h2>Baby Dress</h2>
+                    <img class="img1" *ngFor='let x of productImg1' [src]="x.boys">
+                    <div class="margin-top center">
                         <button routerLink="/home" mat-raised-button color="warn" class=" btn-add" type="submit">Back to Shopping</button>
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <h3>Aarika Baby Girls' A-Line Knee-Long Dress</h3>
-                    <h5><i class="fa fa-inr" aria-hidden="true"></i> :- 900</h5>
+                    <h3>Baby Blossom Boys Party(Festive) Dress T-shirt (Red)</h3>
+                    <h5><i class="fa fa-inr" aria-hidden="true"></i> :- 530</h5>
 
-                    <h5>Color :- Blue, Sleeveless</h5>
+                    <h5>Color :- Red , White</h5>
                     <h6>Delivery :-
                         <mat-form-field class="example-full-width">
                             <input type="number" matInput placeholder="Pin Code">
@@ -21,9 +21,15 @@
                     </h6>
                     <h5>Description :- </h5>
                     <ol>
-                        <li>Fabric: Cotton and Polyester. </li>
-                        <li>Suitable for : Girl's Ideal for all party occasions, birthday, festivals and gifting.</li>
-                        <li>Stylish and Trendy. Sleeveless</li>
+                        <li>Brand:- Baby Blossom</li>
+                        <li>Primary Product Type: Dress</li>
+                        <li>Secondary Product Type: T-shirt</li>
+                    </ol>
+                    <h5>General</h5>
+                    <ol type="A">
+                        <li>Fabric: Cotton. </li>
+                        <li>Style Code:- TEDDY</li>
+                        <li>Size:- 6 - 12 Months</li>
                     </ol>
                 </div>
             </div>
@@ -41,30 +47,30 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-3 ">
+        <div class="col-md-3">
             <h3>New Product</h3>
             <!-- Box 1 -->
-            <div routerLink="../product3" class="zoom border margin-top">
-                <h5 class="center">Baby Dress</h5>
+            <div routerLink="../product2" class="zoom border margin-top">
+                <h5 class="figcaption">Girls Dress</h5>
                 <figure>
-                    <img class="img2" *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.boys" alt="">
-                    <figcaption>Boys Party(Festive)</figcaption>
+                    <img class="img2" *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.girl" alt="">
+                    <figcaption>Girls / Party Dress</figcaption>
                 </figure>
             </div>
             <!-- Box 2 -->
             <div routerLink="../product1" class="zoom border margin-top">
-                <h5 class="center">Wallet</h5>
+                <h5 class="figcaption">Wallet</h5>
                 <figure>
                     <img class="img2" *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.img" alt="">
                     <figcaption>Men Formal Wallet</figcaption>
                 </figure>
             </div>
             <!-- Box 3 -->
-            <div routerLink="../product2" class="zoom border margin-top">
-                <h5 class="center">Girls Dress</h5>
+            <div routerLink="../product3" class="zoom border margin-top">
+                <h5 class="figcaption">Baby Dress</h5>
                 <figure>
-                    <img class="img2" *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.girl" alt="">
-                    <figcaption>Girls / Party Dress</figcaption>
+                    <img class="img2" *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.boys" alt="">
+                    <figcaption>Boys Party(Festive)</figcaption>
                 </figure>
             </div>
         </div>

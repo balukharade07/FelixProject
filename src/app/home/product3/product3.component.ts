@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CartcountService } from '../../cartcount.service';
 
 @Component({
-  selector: 'app-product2',
-  templateUrl: './product2.component.html',
-  styleUrls: ['./product2.component.css']
+  selector: 'app-product3',
+  templateUrl: './product3.component.html',
+  styleUrls: ['./product3.component.css']
 })
-export class Product2Component implements OnInit {
+export class Product3Component implements OnInit {
 
   constructor(private _cart: CartcountService) { 
     
@@ -17,6 +17,7 @@ export class Product2Component implements OnInit {
   productImg1 = [{
     
   }]
+
   ngOnInit() {
   }
 
