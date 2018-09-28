@@ -45,3 +45,11 @@ button {
 .account {
     margin-top: 10px;
 }
+
+.myclass::ng-deep.mat-form-field-placeholder {
+    color: red;
+}
+
+::-webkit-input-placeholder {
+    color: red;
+}

@@ -3,16 +3,18 @@
         <div class="login form-group">
             <img class="login-img" [src]='img'>
             <form class="example-form">
+
                 <mat-form-field class="example-full-width">
-                    <input type="text" matInput placeholder="User Name" required>
+                    <input class="bordererror" type="text" value="" id="user" autocomplete="off" matInput placeholder="User Name" required>
                 </mat-form-field>
+
+
                 <mat-form-field class="example-full-width">
-                    <input type="password" matInput placeholder="Password" required>
+                    <input type="password" value="" id="pass" autocomplete="off" matInput placeholder="Password" required>
                 </mat-form-field>
             </form>
-            <button routerLink="/home" (click)="login()" mat-raised-button color="primary" type="submit">Login</button>
+            <button (click)="login()" mat-raised-button color="primary" type="submit">Login </button>
             <p class="account"><a mat-button color="accent" (click)="openDialog()" routerLink="">Create new account</a></p>
         </div>
     </div>
-
 </div>

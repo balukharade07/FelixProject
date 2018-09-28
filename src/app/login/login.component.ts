@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { RegistrationComponent } from '../registration/registration.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { RegistrationComponent } from '../registration/registration.component';
 })
 export class LoginComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private router: Router) { }
 
   img = './assets/img/3.jpg';
 
@@ -24,10 +25,31 @@ export class LoginComponent {
     });
   }
 
+
+x ;
+y;
+
+
   login(){
    
-  
-      alert('WelCome To Felix Shopping')
+      this.x = document.getElementById("user").value;
+      this.y = document.getElementById("pass").value;
+
+    if(this.x == ""){
+      alert('Please Enter Your User_Name');
+      document.getElementById("user").innerHTML = 'red';
+      return false;
+    } 
+   else if(this.y == ""){
+      alert('Please Enter Your Password');
+      return false;
+    } 
+     
+    else{
+      alert("Successfully login");
+      this.router.navigate(['./home']);
+      return true;
+    }
    
   }
 
