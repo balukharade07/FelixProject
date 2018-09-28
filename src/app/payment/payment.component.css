@@ -16,6 +16,10 @@
     text-align: center;
 }
 
+.container {
+    margin-top: 82px;
+}
+
 .top {
     margin-top: 20px;
 }
