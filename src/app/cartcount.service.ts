@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { INVENTORY } from './inventory';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,18 @@ productImg = [{
   boys : './assets/img/boys_dress.jpeg',
 }]
 
+login1={
+  name : 'balu',
+  password : 'balu'
+};
+
+inventriy = INVENTORY;
   
+getInventory(){
+  return this.inventriy;
+}
+
+
 
   statu2 = [{
     status :"Add to Cart",
@@ -21,6 +33,7 @@ productImg = [{
     cartcount : '0',
   }];
 
+  
   counter1 :number = 0;
 
 

@@ -1,116 +1,74 @@
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-2">
-            <!-- Box 1 -->
-            <div routerLink="../home/product3" class="zoom border margin-top">
-                <h5 class="figcaption">Baby Dress</h5>
-                <figure>
-                    <img *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.boys" alt="">
-                    <figcaption>Boys Party(Festive)</figcaption>
-                </figure>
-            </div>
-            <!-- Box 2 -->
-            <div routerLink="../home/product1" class="zoom border margin-top">
-                <h5 class="figcaption">Wallet</h5>
-                <figure>
-                    <img *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.img" alt="">
-                    <figcaption>Men Formal Wallet</figcaption>
-                </figure>
-            </div>
-            <!-- Box 3 -->
-            <div routerLink="../home/product2" class="zoom border margin-top">
-                <h5 class="figcaption">Girls Dress</h5>
-                <figure>
-                    <img *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.girl" alt="">
-                    <figcaption>Girls / Party Dress</figcaption>
-                </figure>
+            <div class='item-name'>
+                <div *ngFor="let item of inventriy; let i = index" routerLink='../product/{{i+1}}' class="zoom border margin-top">
+                    <h5 class="figcaption">{{item.name}}</h5>
+                    <figure>
+                        <img [ngClass]="'center'" [src]="item.img" alt="">
+                        <figcaption>{{item.figcaption}}</figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
         <div class="col-sm-7 sidenav border1">
             <h4>Product Informtions</h4>
-            <!-- PRODUCT 1 -->
-            <div class="product1 box col-md-12 ">
-                <h4>Wallet</h4>
-                <div class="flex">
-                    <div class="col-sm-4">
-                        <figure>
-                            <img *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.img" alt="">
-                            <figcaption>Men Formal Wallet</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-sm-8">
-                        <h5>Price : 499/-</h5>
-                        <h5>Quntity
-                            <span (click)="deincres()"> <button mat-mini-fab color="warn"><i class="fa fa-minus"  aria-hidden="true"></i></button></span> &nbsp;&nbsp;&nbsp;<span>{{result}}</span>&nbsp;&nbsp;&nbsp;
-                            <span (click)="incres()"><button mat-mini-fab color="accent"><i class="fa fa-plus" aria-hidden="true"></i></button></span>
-                        </h5>
-                        <h5>Color :- Brown</h5>
-                        <div class="left1 col-md-12">
-                            <button class="col-md" *ngFor="let obj of statu1" (click)="cart(obj)" [style.background-color]="obj.bgcolor" mat-raised-button color="primary" type="submit"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;{{obj.status}}</button>
-                            <p class="offset-md-2"></p>
-                            <button class="col-md btn-brif" routerLink="../home/product1" mat-raised-button color="accent">Brif Info of Product</button>
+
+            <div class=" col-md-12">
+
+                <li *ngFor="let item of inventriy; let i = index" class="margin-top flex box col-md-12">
+
+                    <div class="col-sm margin-top">
+                        <h4> {{item.name}}</h4>
+                        <div class="pointer" routerLink='/product/{{i+1}}'>
+                            <figure>
+                                <img [ngClass]="'center'" [src]="item.img" alt="">
+                                <figcaption>{{item.figcaption}}</figcaption>
+                            </figure>
                         </div>
                     </div>
-                </div>
+                    <div class="col-sm margin-top">
+                        <h5>Prices :-{{item.price}}</h5>
+                        <h5>Color :- {{item.Color}}</h5>
+                        <h5>Quntity
+                            <span (click)="deincres(i)"> <button [disabled]="item.deincre1" mat-mini-fab color="warn"><i class="fa fa-minus"  aria-hidden="true"></i></button></span> &nbsp;&nbsp;&nbsp;<span>{{item.quantity}}</span>&nbsp;&nbsp;&nbsp;
+                            <span (click)="incres(i)"><button mat-mini-fab color="accent"><i class="fa fa-plus" aria-hidden="true"></i></button></span>
+                        </h5>
+
+                        <div class="left1 col-md-12 margin-top">
+                            <div class="col-md-5">
+                                <button (click)="cart(i)" [disabled]="item.deincre1" [style.background-color]="item.bgcolor" mat-raised-button color="primary" type="submit"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;{{item.status}}</button>
+                            </div>
+                            <p class="offset-md-2"></p>
+                            <div class="col-md-5">
+                                <button routerLink='../product/{{i+1}}' class="btn-brif" mat-raised-button color="accent">Brif Info of Product</button>
+                            </div>
+                        </div>
+                        <!-- <button *ngIf='!item.selected' (click)='addToCart(i)'>Add to Cart</button>
+                        <button *ngIf='item.selected' (click)='removeFromCart(i)'>Remove from Cart</button> -->
+                    </div>
+
+                    <!--                    
+                    <span>Quantity : </span>
+                    <input type="number" min="0" [(ngModel)]='item.quantity'>
+                    <button *ngIf='!item.selected' (click)='addToCart(i)'>Add to Cart</button>
+                    <button *ngIf='item.selected' (click)='removeFromCart(i)'>Remove from Cart</button> -->
+                    <div>
+
+                    </div>
+                </li>
             </div>
 
-            <!-- PRODUCT 2 -->
-            <br>
-            <div class="product1 box col-md-12 ">
-                <h4>Girls Dress</h4>
-                <div class="flex">
-                    <div class="col-sm-4">
-                        <img *ngFor='let x of productImg1' [ngClass]="'center'" [src]="x.girl" alt="">
-                        <figcaption>Girls / Party Dress</figcaption>
-                    </div>
-                    <div class="col-sm-8">
-                        <h5>Price : 900/-</h5>
-                        <h5>Quntity
-                            <span (click)="deincres2()"><button mat-mini-fab color="warn"><i class="fa fa-minus" aria-hidden="true"></i></button></span> &nbsp;&nbsp;&nbsp;<span>{{counter2}}</span>&nbsp;&nbsp;&nbsp;
-                            <span (click)="incres2()"><button mat-mini-fab color="accent"><i class="fa fa-plus" aria-hidden="true"></i></button></span>
-                        </h5>
-                        <h5>Color :- Blue, Sleeveless</h5>
-                        <div class="left1">
-                            <button mat-raised-button color="primary" class="col-md-5 btn-add" type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;Add to cart</button>
-                            <p class="offset-md-2"></p>
-                            <button routerLink="../home/product2" mat-raised-button color="accent" class="col-md-5 btn-brif" type="submit">Brif Info of Product</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Product 3  -->
-            <br>
-            <div class="product1 box col-md-12 ">
-                <h4>Baby Dress</h4>
-                <div class="flex">
-                    <div class="col-sm-4">
-                        <img *ngFor='let x of productImg1' [ngClass]="'center'" src="{{x.boys}}" alt="">
-                        <figcaption>Boys Party(Festive)</figcaption>
-                    </div>
-                    <div class="col-sm-8">
-                        <h5>Price : 530/-</h5>
-                        <h5>Quntity
-                            <span (click)="deincres3()"><button mat-mini-fab color="warn"><i class="fa fa-minus" aria-hidden="true"></i></button></span> &nbsp;&nbsp;&nbsp;<span>{{counter3}}</span>&nbsp;&nbsp;&nbsp;
-                            <span (click)="incres3()"><button mat-mini-fab color="accent"><i class="fa fa-plus" aria-hidden="true"></i></button></span>
-                        </h5>
-                        <h5>Color :- Red</h5>
-                        <div class="left1">
-                            <button mat-raised-button color="primary" class="col-md-5 btn-add" type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;Add to cart</button>
-                            <p class="offset-md-2"></p>
-                            <button routerLink="../home/product3" mat-raised-button color="accent" class="col-md-5 btn-brif" type="submit">Brif Info of Product</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End of product -->
+
         </div>
 
         <div class="col-sm-3 sidenav">
             <h4>Order Informations</h4>
             <h2 class="margin-top">Total Amount</h2>
-            <button class="btn btn-primary"><h4>{{result*499 + counter2*900 + counter3*530 }}</h4></button>
-            <h4 class="margin-top">Total Items Order</h4>
-            <button mat-raised-button color="accent"><h4>{{result + counter2 + counter3 }}</h4></button>
+
+            <button mat-raised-button color="warn" class="font">{{totalPrize}}</button>
+            <h4 class="margin-top">Total Items Carts</h4>
+            <button mat-raised-button color="accent" class="font">{{totalquantity}}</button>
             <h4 class="margin-top">Confirmation Order</h4>
             <button routerLink="/paymentmode" mat-raised-button color="primary" type="submit">Process To Checkout</button>
         </div>

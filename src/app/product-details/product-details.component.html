@@ -1,0 +1,37 @@
+<div class="container-fluid box ">
+    <div class='row top'>
+        <div class='col-md-9 '>
+            <div class="flex">
+                <div class='col-md-4'>
+                    <h2>{{inventriy[routeParams.id-1].name}}</h2>
+                    <img [ngClass]="'center'" src="{{inventriy[routeParams.id-1].img}}" alt="image not found">
+                    <a routerLink='/home'>
+                        <button class="top2" [ngClass]="'center'" mat-raised-button color="primary">Back To Catalog</button>
+                    </a>
+                </div>
+
+                <div class='col-md-8'>
+                    <h2>{{inventriy[routeParams.id-1].titals}}</h2>
+                    <h3>Rs : {{inventriy[routeParams.id-1].price}}</h3>
+                    <h4> Color :{{inventriy[routeParams.id-1].Color}}</h4>
+                    <h4>Description:{{inventriy[routeParams.id-1].description}}</h4>
+                    <h4> Size :{{inventriy[routeParams.id-1].size}}</h4>
+                    <h4> Rating :{{inventriy[routeParams.id-1].rating}}</h4>
+                </div>
+            </div>
+            <h4 class="top2"> Specifications :{{inventriy[routeParams.id-1].Specifications}}</h4>
+        </div>
+
+        <div class='col-md-3 '>
+            <div *ngFor="let item of inventriy; let i = index" routerLink='/product/{{i+1}}' class="zoom border margin-top">
+                <h5 class="figcaption center1">{{item.name}}</h5>
+                <figure>
+                    <img class="img1" [ngClass]="'center'" [src]="item.img" alt="">
+                    <figcaption class="center1">{{item.figcaption}}</figcaption>
+                </figure>
+            </div>
+        </div>
+
+    </div>
+    <app-footer1></app-footer1>
+</div>

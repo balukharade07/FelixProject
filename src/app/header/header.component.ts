@@ -12,43 +12,35 @@ export class HeaderComponent implements OnInit {
 
   values : number = 0;
   show = false;
+  isLoggedIn = true;
+  loggedOut = false;
 
-  statu1 = [{
-    
-  }];
- 
+
+  //statu1 = [{}];
+  inventriy = [{}];
+  totalquantity =0;
+  
   ngOnInit() {
-    this.statu1 = this._cart1.statu2;
+    this.inventriy = this._cart1.getInventory();
+  //this.statu1 = this._cart1.statu2;
   }
 
   toggale(){
     this.show = !this.show;
   }
-  // statu1 = [{
-  //   edited : true,
-    
-    
-  // }];
- 
-  
-
-  // notifications(add){
-   
-
-  //     if(add.edited == true)
-  //     {
-  //       alert('working');
-  //       add.edited = false;
-  //     }
-  //      else
-  //     {
-  //       add.edited = true;
-  //       alert('mouse out working');
-  //     }
-  //     return add;
-    
-
-  // }
-
+ info=[
+   {
+     "h1":'20% offer in T-Shirt...',
+     "h2":'5 mins ago'
+   },
+   {
+    "h1":'Buy 1 get 5 offer in Shirt...',
+    "h2":'10 mins ago'
+  },
+  {
+    "h1":'Buy 1 get 5 offer in Dresses...',
+    "h2":'15 mins ago'
+  }
+ ] 
 
 }

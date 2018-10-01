@@ -2,7 +2,25 @@
     <div class="row">
         <div class="login form-group">
             <img class="login-img" [src]='img'>
-            <form class="example-form">
+            <form #myFrom="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <!-- <label for="usr">User Name</label> -->
+                    <input placeholder="User Name" type="text" class="form-control" id="fname" name="name" [(ngModel)]="login.name" required #uname="ngModel">
+                </div>
+                <div [hidden]="uname.valid || uname.pristine" class="color">
+                    * Name is required
+                </div>
+                <div class="form-group top">
+                    <!-- <label for="pwd">Password</label> -->
+                    <input placeholder="Password" type="password" class="form-control" name="password" id="pass1" [(ngModel)]="login.password" required #pass="ngModel">
+                </div>
+                <div [hidden]="pass.valid || pass.pristine" class="color">
+                    * Password is required
+                </div>
+                <button [disabled]="!myFrom.form.valid" class="btn btn-primary" type="submit">submit</button>
+                <p class="account"><a mat-button color="accent" (click)="openDialog()" routerLink="">Create new account</a></p>
+            </form>
+            <!-- <form class="example-form">
 
                 <mat-form-field class="example-full-width">
                     <input class="bordererror" type="text" value="" id="user" autocomplete="off" matInput placeholder="User Name" required>
@@ -14,7 +32,7 @@
                 </mat-form-field>
             </form>
             <button (click)="login()" mat-raised-button color="primary" type="submit">Login </button>
-            <p class="account"><a mat-button color="accent" (click)="openDialog()" routerLink="">Create new account</a></p>
+            <p class="account"><a mat-button color="accent" (click)="openDialog()" routerLink="">Create new account</a></p> -->
         </div>
     </div>
 </div>

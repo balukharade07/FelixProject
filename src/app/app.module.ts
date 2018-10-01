@@ -17,6 +17,7 @@ import { CartcountService } from './cartcount.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
     HeaderComponent,
     CartComponent,
     PaymentComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    ProductDetailsComponent
     
   ],
   imports: [

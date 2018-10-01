@@ -25,6 +25,10 @@
     width: 100%;
 }
 
+.flex {
+    display: flex;
+}
+
 .example-full-width {
     width: 100%;
 }
@@ -46,10 +50,10 @@ button {
     margin-top: 10px;
 }
 
-.myclass::ng-deep.mat-form-field-placeholder {
+.color {
     color: red;
 }
 
-::-webkit-input-placeholder {
-    color: red;
+.top {
+    margin-top: 10px;
 }

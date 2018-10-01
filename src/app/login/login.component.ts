@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { RegistrationComponent } from '../registration/registration.component';
 import { Router } from '@angular/router';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(public dialog: MatDialog,private router: Router) { }
+  constructor(public dialog: MatDialog,private router: Router,) { }
 
   img = './assets/img/3.jpg';
 
@@ -25,32 +26,25 @@ export class LoginComponent {
     });
   }
 
-
-x ;
-y;
-
-
-  login(){
+  login={
+    name : '',
+    password : ''
+  };
+  login1={
+    name : 'balu',
+    password : 'balu'
+  };
    
-      this.x = document.getElementById("user").value;
-      this.y = document.getElementById("pass").value;
+  onSubmit(){
+      if(this.login.name === this.login1.name && this.login.password === this.login1.password)
+      {
+        alert("Login sucefully");
+        this.router.navigate(['./home']);
+      }
+      else{
+        alert("please Login");
 
-    if(this.x == ""){
-      alert('Please Enter Your User_Name');
-      document.getElementById("user").innerHTML = 'red';
-      return false;
-    } 
-   else if(this.y == ""){
-      alert('Please Enter Your Password');
-      return false;
-    } 
-     
-    else{
-      alert("Successfully login");
-      this.router.navigate(['./home']);
-      return true;
-    }
-   
+      }
   }
 
 }

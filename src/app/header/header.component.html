@@ -6,8 +6,8 @@
                 <a class="navbar-brand" routerLink="home">Felix Project</a>
             </div>
             <ul class="nav navbar-nav">
-                <li routerLink="/login" routerLinkActive="active current"><a><i class="fa fa-user-circle-o" aria-hidden="true"></i> Login</a></li>
-                <li *ngFor="let obj of statu1" routerLink="../cart" routerLinkActive="active current" class="cursor"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i>  <span  matBadge="{{obj.cartcount}}" matBadgeColor="warn" matBadgeOverlap="false"> Cart</span> </a></li>
+                <li routerLinkActive="active current" *ngIf="isLoggedIn  else loggedOut"><a><i class="fa fa-user-circle-o" aria-hidden="true"></i>{{name}}</a></li>
+                <li routerLink="../cart" routerLinkActive="active current" class="cursor"><a><i class="fa fa-shopping-cart" aria-hidden="true"></i>  <span  matBadge="{{totalquantity}}" matBadgeColor="warn" matBadgeOverlap="false"> Cart</span> </a></li>
                 <li (click)="toggale()"><a><i class="fa fa-bell" aria-hidden="true"></i></a></li>
             </ul>
         </div>
@@ -17,13 +17,7 @@
     <ul class="dropdown-menu3">
         <p class="padding center"> Notifications</p>
         <li class="divider"></li>
-        <li class="padding felex"><span class="cursor">20% offer in T-Shirt... </span> <span> 5 min's ago</span>
-        </li>
-        <li class="divider"></li>
-        <li class="padding felex"><span class="cursor">Buy 1 get 5 offer in Shirt... </span> <span> 10 min's ago</span>
-        </li>
-        <li class="divider"></li>
-        <li class="padding felex"><span class="cursor">Buy 1 get 5 offer in Dresses... </span> <span> 15 min's ago</span>
+        <li class="padding" *ngFor="let notifications of info"><span class="cursor">{{notifications.h1}} </span> <span>{{notifications.h2}} </span>
         </li>
         <li class="divider"></li>
         <li class="padding center cursor">View All Notifications&nbsp;&nbsp; <i class="fa fa-angle-right" aria-hidden="true"></i></li>
