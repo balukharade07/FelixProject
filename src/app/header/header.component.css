@@ -93,6 +93,18 @@ nav ul li:hover {
     text-align: center;
 }
 
+.color1 {
+    color: #fff;
+}
+
+.color1 .navbar-brand {
+    text-align: center;
+}
+
+.navbar1 {
+    height: 51px;
+}
+
 .padding {
     padding: 10px 0px;
     margin-left: 15px;
@@ -115,3 +127,52 @@ nav ul li:hover {
 ul.dropdown-menu3 li:hover {
     color: #007bff;
 }
+
+.LM6RPg {
+    padding: 0 16px;
+    border-radius: 4px 0 0 4px;
+    border: 0 none;
+    outline: 0 none;
+    font-size: 14px;
+    height: 36px;
+    width: 100%;
+}
+
+.vh79eN {
+    border: 2px solid#fff;
+    border-left: 2px solid #f1f3f6;
+    border-radius: 0 4px 4px 0;
+    height: 36px;
+    min-width: 36px;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 4px;
+    background-color: #fff;
+}
+
+.O8ZS_U {
+    width: 300px;
+}
+
+.fa-search {
+    color: #007bff;
+}
+
+.menu-icon{
+    display: none;
+    color: white;
+    background: #007bff;
+    outline: none;
+}
+@media only screen and (max-width: 840px) {
+    .search-hide{
+        display: none !important;
+    }
+    .menu-hide{
+        display: none !important;
+    }
+    .menu-icon{
+        display: block;
+       
+    }
+  }

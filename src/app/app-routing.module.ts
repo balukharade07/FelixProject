@@ -5,6 +5,8 @@ import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { DeactivateService } from './deactivate.service';
+
 
 
 const routes: Routes = [
@@ -31,7 +33,8 @@ const routes: Routes = [
   },
   {
     path:'paymentmode',
-    component:PaymentComponent
+    component:PaymentComponent,
+    canDeactivate:[DeactivateService]
   },
   {
     path:'confirm',

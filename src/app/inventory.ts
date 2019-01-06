@@ -15,7 +15,8 @@ export const INVENTORY = [
         "deincre1":true,
         "status" :"Add from Cart",
         "bgcolor":"#3f51b5",
-        "totalquantity":0
+        "totalquantity":0,
+        "checkin" : false
       },
       {
         "name": 'Girls Dress',
@@ -33,7 +34,8 @@ export const INVENTORY = [
         "deincre1":true,
         "status" :"Add from Cart",
         "bgcolor":' #3f51b5',
-        "totalquantity":0
+        "totalquantity":0,
+        "checkin" : false
       },
       {
         "name": 'Baby Dress',
@@ -51,6 +53,7 @@ export const INVENTORY = [
         "deincre1":true,
         "status" :"Add from Cart",
         "bgcolor":' #3f51b5',
-        "totalquantity":0
+        "totalquantity":0,
+        "checkin" : false
       }
 ];

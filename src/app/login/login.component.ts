@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { RegistrationComponent } from '../registration/registration.component';
 import { Router } from '@angular/router';
-import { CartComponent } from '../cart/cart.component';
+import { CartcountService } from '../cartcount.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  implements OnInit{
 
-  constructor(public dialog: MatDialog,private router: Router,) { }
+  constructor(public dialog: MatDialog,private router: Router,public _cart1 :CartcountService) { }
 
   img = './assets/img/3.jpg';
 
@@ -26,6 +26,7 @@ export class LoginComponent {
     });
   }
 
+  
   login={
     name : '',
     password : ''
@@ -34,15 +35,28 @@ export class LoginComponent {
     name : 'balu',
     password : 'balu'
   };
-   
+  
+ 
+
+  ngOnInit() {
+    
+    
+  }
+ 
+ user1: boolean = false;
+ 
   onSubmit(){
+    
       if(this.login.name === this.login1.name && this.login.password === this.login1.password)
       {
+        
         alert("Login sucefully");
         this.router.navigate(['./home']);
+        //this.user1 = this.user1 = true;
+        
       }
       else{
-        alert("please Login");
+        alert("Please correct all fields");
 
       }
   }

@@ -41,13 +41,18 @@ figcaption {
 }
 
 .btn-primary {
-    width: 90px;
+    /* width: 90px; */
 }
 
 .margin-top {
     margin-top: 25px;
 }
-
+.price_padding{
+    padding: 40px;
+}
+h4{
+    text-align: center;
+}
 button:hover {
     box-shadow: 2px 5px 5px 3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
 }
@@ -66,3 +71,37 @@ button:hover {
 .font {
     font-size: 26px;
 }
+
+.example-button {
+    margin-top: 16px;
+}
+
+.countbtn{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.example-tooltip-red {
+    background-color: #b71c1c;
+}
+
+@media only screen and (max-width: 992px) {
+    .order-info{
+        padding: 50px;
+        
+    }
+  
+  }
+@media only screen and (max-width: 576px) {
+    .add-cart-btn-width{
+        padding-top: 20px;
+        width: 50%;
+    }
+  
+  }
+  @media only screen and (max-width: 400px) {
+    .add-cart-btn-width{
+        width: 100%;
+        text-align: center;
+    }
+  
+  }

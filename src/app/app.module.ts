@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   ],
   entryComponents:[RegistrationComponent],
   exports:[FooterModule],
-  providers: [CartcountService],
+  providers: [CartcountService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

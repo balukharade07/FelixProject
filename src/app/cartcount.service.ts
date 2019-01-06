@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { INVENTORY } from './inventory';
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +15,25 @@ productImg = [{
   boys : './assets/img/boys_dress.jpeg',
 }]
 
-login1={
-  name : 'balu',
-  password : 'balu'
-};
+
+
+isUserLoggedIn: boolean =true;
+
+ getuser(){
+   return this.isUserLoggedIn;
+ }
+// login1={
+//   name : 'balu',
+//   password : 'balu'
+// };
 
 inventriy = INVENTORY;
   
 getInventory(){
   return this.inventriy;
+   
 }
+
 
 
 

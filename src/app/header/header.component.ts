@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartcountService } from '../cartcount.service';
+declare var $: any;
 
 @Component({
   selector: 'app-header',
@@ -9,11 +10,14 @@ import { CartcountService } from '../cartcount.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private _cart1: CartcountService) { }
-
+  title = "Felix Project";
   values : number = 0;
   show = false;
-  isLoggedIn = true;
-  loggedOut = false;
+
+  @Input() public user :boolean;
+  //@Input() user: string ;
+
+  @Input() public isUserLoggedIn: boolean;
 
 
   //statu1 = [{}];
@@ -23,7 +27,26 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.inventriy = this._cart1.getInventory();
   //this.statu1 = this._cart1.statu2;
+
+
+  $(document).ready(function(){
+
+    $(".menu-icon").click(function(){
+      alert('hiii');
+      $(".menu-hide").show('10000');
+    });
+
+   
+  });
+
   }
+
+  toggleTitle(){
+   
+   
+  }
+
+
 
   toggale(){
     this.show = !this.show;

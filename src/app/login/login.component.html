@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="container">
     <div class="row">
         <div class="login form-group">
@@ -5,20 +7,28 @@
             <form #myFrom="ngForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <!-- <label for="usr">User Name</label> -->
-                    <input placeholder="User Name" type="text" class="form-control" id="fname" name="name" [(ngModel)]="login.name" required #uname="ngModel">
+                    <input placeholder="User Name"  [class.has-error]="uname.invalid && uname.touched" type="text" class="form-control" id="fname" name="name" [(ngModel)]="login.name" required #uname="ngModel">
+                    <span class="color" *ngIf="uname.errors?.required && uname.touched">
+                        User Name is required
+                      </span>
                 </div>
-                <div [hidden]="uname.valid || uname.pristine" class="color">
+               
+               
+                <!-- <div [hidden]="uname.invalid && uname.pristine" class="color">
                     * Name is required
-                </div>
+                </div> -->
                 <div class="form-group top">
                     <!-- <label for="pwd">Password</label> -->
-                    <input placeholder="Password" type="password" class="form-control" name="password" id="pass1" [(ngModel)]="login.password" required #pass="ngModel">
+                    <input placeholder="Password"  [class.has-error]="pass.invalid && pass.touched" type="password" class="form-control" name="password" id="pass1" [(ngModel)]="login.password" required #pass="ngModel">
+                    <span class="color" *ngIf="pass.errors?.required && pass.touched">
+                        Password is required
+                      </span>
                 </div>
-                <div [hidden]="pass.valid || pass.pristine" class="color">
+                <!-- <div [hidden]="pass.invalid && pass.pristine" class="color">
                     * Password is required
-                </div>
-                <button [disabled]="!myFrom.form.valid" class="btn btn-primary" type="submit">submit</button>
-                <p class="account"><a mat-button color="accent" (click)="openDialog()" routerLink="">Create new account</a></p>
+                </div> -->
+                <button [disabled]="!myFrom.form.valid" class="btn btn-primary" type="submit">Log In</button>
+                <p class="account"><a mat-button color="accent" (click)="openDialog()">Create new account</a></p>
             </form>
             <!-- <form class="example-form">
 
